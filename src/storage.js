@@ -13,3 +13,13 @@ window.onload = () => {
     form.messages.value = data.message;
   }
 };
+form.addEventListener('submit', () => {
+  data.name = form.name.value;
+  data.email = form.email.value;
+  data.message = form.messages.value;
+  localStorage.setItem('data', JSON.stringify(data));
+});
+
+form.addEventListener('reset', () => {
+  window.localStorage.clear();
+});
